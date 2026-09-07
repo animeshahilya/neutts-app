@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Languages this engine can speak, as the system's TTS settings will list them. Only the two the
+     catalog actually has models for: English, and the community Hindi fine-tune. -->
+<tts-engine xmlns:android="http://schemas.android.com/apk/res/android"
+    android:settingsActivity="com.animeshahilya.neutts.MainActivity" />

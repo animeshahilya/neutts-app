@@ -1,0 +1,25 @@
+# Build output
+build/
+app/build/
+app/.cxx/
+.gradle/
+.kotlin/
+local.properties
+
+# Release signing - never commit the keystore or its password.
+*.jks
+keystore.properties
+
+# IDE
+.idea/
+*.iml
+.DS_Store
+
+# Fetched at build time for the optional Vulkan backend - see app/build.gradle.kts. Headers only,
+# from KhronosGroup/Vulkan-Headers v1.3.275, matching the NDK's VK_HEADER_VERSION.
+app/src/main/cpp/third_party/vulkan-headers/
+
+# A Python virtualenv left over from the model-conversion work - not part of the app.
+venv/
+__pycache__/
+*.pyc

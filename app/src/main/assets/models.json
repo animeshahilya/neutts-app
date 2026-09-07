@@ -1,0 +1,140 @@
+{
+  "formatVersion": 1,
+  "codec": {
+    "id": "neucodec-int8",
+    "name": "Voice decoder",
+    "repo": "aoiandroid/neuphonic-neucodec-onnx-decoder-int8-mirror",
+    "file": "model.onnx",
+    "sizeBytes": 312292102,
+    "description": "Turns what the model produces into sound. Shared by every voice, so it downloads once."
+  },
+  "backbones": [
+    {
+      "id": "2e-q4",
+      "name": "NeuTTS 2E — emotional",
+      "url": "https://github.com/animeshahilya/neutts-models/releases/download/v1/neutts-2e-q4.gguf",
+      "repo": "",
+      "file": "",
+      "lang": "en",
+      "langName": "English",
+      "sizeBytes": 173122336,
+      "description": "Reads with feeling — pick happy, sad, angry, fearful, disgusted, surprised or neutral. A third the size of the others and about three times as fast, which makes it the one to use for long reading. Only its four built-in speakers; it cannot copy your voice.",
+      "preview": "previews/2e-q4.ogg",
+      "sourceRepo": "neuphonic/neutts-2e",
+      "license": "NeuTTS Open License v1.0",
+      "inputFormat": "text",
+      "emotions": [
+        "neutral",
+        "happy",
+        "sad",
+        "angry",
+        "fearful",
+        "disgusted",
+        "surprised"
+      ],
+      "speakers": [
+        "emily",
+        "paul",
+        "sophie",
+        "steven"
+      ],
+      "default": false
+    },
+    {
+      "id": "air-q4",
+      "name": "NeuTTS Air — Q4",
+      "repo": "mradermacher/neutts-air-GGUF",
+      "file": "neutts-air.Q4_K_M.gguf",
+      "lang": "en",
+      "langName": "English",
+      "sizeBytes": 596267936,
+      "description": "The one to start with. Smallest build that still sounds like the full model, and the quickest to speak.",
+      "preview": "previews/air-q4.ogg",
+      "default": true,
+      "sourceRepo": "neuphonic/neutts-air",
+      "license": "apache-2.0",
+      "inputFormat": "phonemes",
+      "emotions": [],
+      "speakers": []
+    },
+    {
+      "id": "air-q5",
+      "name": "NeuTTS Air — Q5",
+      "repo": "mradermacher/neutts-air-GGUF",
+      "file": "neutts-air.Q5_K_M.gguf",
+      "lang": "en",
+      "langName": "English",
+      "sizeBytes": 630734592,
+      "description": "A little more detail than Q4 for about 35 MB more. Worth trying if Q4 sounds thin to you.",
+      "preview": "previews/air-q5.ogg",
+      "default": false,
+      "sourceRepo": "neuphonic/neutts-air",
+      "license": "apache-2.0",
+      "inputFormat": "phonemes",
+      "emotions": [],
+      "speakers": []
+    },
+    {
+      "id": "air-q8",
+      "name": "NeuTTS Air — Q8",
+      "repo": "mradermacher/neutts-air-GGUF",
+      "file": "neutts-air.Q8_0.gguf",
+      "lang": "en",
+      "langName": "English",
+      "sizeBytes": 802659296,
+      "description": "Closest to the original model. Bigger, and slower to speak — best kept for a fast phone.",
+      "preview": "previews/air-q8.ogg",
+      "default": false,
+      "sourceRepo": "neuphonic/neutts-air",
+      "license": "apache-2.0",
+      "inputFormat": "phonemes",
+      "emotions": [],
+      "speakers": []
+    },
+    {
+      "id": "air-q2",
+      "name": "NeuTTS Air — Q2",
+      "repo": "mradermacher/neutts-air-GGUF",
+      "file": "neutts-air.Q2_K.gguf",
+      "lang": "en",
+      "langName": "English",
+      "sizeBytes": 512690400,
+      "description": "The smallest download. Still clear, but rougher around the edges — for when space matters most.",
+      "preview": "previews/air-q2.ogg",
+      "default": false,
+      "sourceRepo": "neuphonic/neutts-air",
+      "license": "apache-2.0",
+      "inputFormat": "phonemes",
+      "emotions": [],
+      "speakers": []
+    },
+    {
+      "id": "hi",
+      "name": "NeuTTS Air — Hindi",
+      "repo": "RahulKadam0909/neutts-air-hi-preview-Q4_K_M-GGUF",
+      "file": "neutts-air-hi-preview-q4_k_m.gguf",
+      "lang": "hi",
+      "langName": "Hindi",
+      "sizeBytes": 462191168,
+      "description": "Hindi, contributed by the community and labelled a preview by its author — expect rough edges.",
+      "preview": "previews/hi.ogg",
+      "default": false,
+      "sourceRepo": "jaeyong2/neutts-air-hi-preview",
+      "license": "apache-2.0",
+      "inputFormat": "phonemes",
+      "emotions": [],
+      "speakers": []
+    }
+  ],
+  "encoder": {
+    "id": "neucodec-encoder",
+    "name": "Voice cloning",
+    "repo": "KevinAHM/distill-neucodec-onnx",
+    "files": [
+      "onnx/distill_neucodec_encoder.onnx",
+      "onnx/distill_neucodec_encoder.onnx.data"
+    ],
+    "sizeBytes": 518536536,
+    "description": "Optional. Lets you record your own voice - or anyone's, with their permission - and have the app speak in it. Without this you can still use the nine voices that come built in."
+  }
+}
