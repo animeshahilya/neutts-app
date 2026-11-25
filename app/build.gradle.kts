@@ -16,11 +16,14 @@ plugins {
 
 android {
     namespace = "com.animeshahilya.neutts"
-    compileSdk = 36
+    compileSdk {
+        version = release(37) { minorApiLevel = 2 }
+    }
+    ndkVersion = "30.0.16248370"
     defaultConfig {
         applicationId = "com.animeshahilya.neutts"
         minSdk = 24
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 2
         versionName = "1.1.0"
         

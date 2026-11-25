@@ -1,11 +1,13 @@
 package com.animeshahilya.neutts.audio
 
+import android.Manifest
 import android.media.AudioAttributes
 import android.media.AudioFormat
 import android.media.AudioManager
 import android.media.AudioRecord
 import android.media.AudioTrack
 import android.media.MediaRecorder
+import androidx.annotation.RequiresPermission
 import java.io.File
 import java.io.OutputStream
 import kotlin.math.abs
@@ -109,6 +111,7 @@ class ReferenceRecorder {
      * Requires RECORD_AUDIO; the caller checks that, because a permission prompt belongs in the UI
      * and not down here.
      */
+    @RequiresPermission(Manifest.permission.RECORD_AUDIO)
     fun record(maxSeconds: Int = 30, shouldContinue: () -> Boolean): FloatArray {
         val minBuffer = AudioRecord.getMinBufferSize(
             SAMPLE_RATE, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_FLOAT,
